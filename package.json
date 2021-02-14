@@ -10,14 +10,14 @@
 		"Other"
 	],
 	"activationEvents": [
-        "onCommand:d-ploy.helloWorld"
+        "onCommand:d-ploy.launch"
 	],
 	"main": "./out/extension.js",
 	"contributes": {
 		"commands": [
 			{
-				"command": "d-ploy.helloWorld",
-				"title": "Hello World"
+				"command": "d-ploy.launch",
+				"title": "Launch D-ploy"
 			}
 		]
 	},
