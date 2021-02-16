@@ -1,7 +1,7 @@
 import * as vscode from 'vscode'
 
-export default interface PanelInterface {
-    panel: vscode.WebviewPanel,
+export default interface iPanel {
+    panel: vscode.WebviewPanel | undefined,
     viewType: string,
     title: string,
     showOptions: vscode.ViewColumn | {preserveFocus: boolean, viewColumn: vscode.ViewColumn},

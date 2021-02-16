@@ -17,7 +17,7 @@
 		"commands": [
 			{
 				"command": "d-ploy.launch",
-				"title": "Launch D-ploy"
+				"title": "D-ploy: Launch"
 			}
 		]
 	},

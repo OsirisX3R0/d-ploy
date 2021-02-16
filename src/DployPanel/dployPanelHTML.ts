@@ -1,3 +1,10 @@
+import * as vscode from 'vscode'
+
+const onSubmit = (e: object) => {
+    console.log(e)
+    vscode.window.showInformationMessage('Submitted!')
+}
+
 const dployPanelHTML = () => `
 <!DOCTYPE html>
 <html lang="en">
@@ -40,34 +47,43 @@ const dployPanelHTML = () => `
 <body>
     <h1>Create your D-ployment</h1>
     <div class="container">
-        <label for="deployTo">Branch to deploy to</label>
-        <input type="text" id="deployTo" name="deployTo" />
+        <form onsubmit="onSubmit">
+            <label for="deployTo">Branch to deploy to</label>
+            <input type="text" id="deployTo" name="deployTo" />
 
-        <!--<label for="mergeType">Select merge type</label>-->
-        <select type="text" id="mergeType" name="mergeType">
-            <option>Select merge type</option>
-            <option>Merge</option>
-            <option>Fast-forward</option>
-            <option>No Fast-forward</option>
-            <option>Squash</option>
-        </select>
+            <!--<label for="mergeType">Select merge type</label>-->
+            <select type="text" id="mergeType" name="mergeType">
+                <option>Select merge type</option>
+                <option>Merge</option>
+                <option>Fast-forward</option>
+                <option>No Fast-forward</option>
+                <option>Squash</option>
+            </select>
 
-        <label for="commitMessage">Commit message</label>
-        <textarea type="text" id="commitMessage" name="commitMessage"></textarea>
+            <label for="commitMessage">Commit message</label>
+            <textarea type="text" id="commitMessage" name="commitMessage"></textarea>
 
-        <label>Create tag?</label>
-        <input type="radio" id="tagYes" name="createTag" value="true" />
-        <label for="tagYes" class="radio">Yes</label>
-        <input type="radio" id="tagNo" name="createTag" value="false" />
-        <label for="tagNo" class="radio">No</label>
+            <label>Create tag?</label>
+            <input type="radio" id="tagYes" name="createTag" value="true" />
+            <label for="tagYes" class="radio">Yes</label>
+            <input type="radio" id="tagNo" name="createTag" value="false" />
+            <label for="tagNo" class="radio">No</label>
 
-        <label for="tagName">Tag name</label>
-        <input type="text" id="tagName" name="tagName" />
+            <label for="tagName">Tag name</label>
+            <input type="text" id="tagName" name="tagName" />
 
-        <label for="tagMessage">Tag Message</label>
-        <textarea type="text" id="tagMessage" name="tagMessage"></textarea>        
+            <label for="tagMessage">Tag Message</label>
+            <textarea type="text" id="tagMessage" name="tagMessage"></textarea>        
 
-        <button>D-ploy!</button>
+            <input type="submit" value="D-ploy!" />
+
+            <script type="text/javascript">
+                const onSubmit = (e: object) => {
+                    console.log(e)
+                    vscode.window.showInformationMessage('Submitted!')
+                }
+            </script>
+        </form>
     </div>
 </body>
 </html>
